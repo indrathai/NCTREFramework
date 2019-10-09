@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1040,846</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1040,886</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -504,9 +504,9 @@
     </State>
     <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID1</x:Reference>
-    <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Read Config, Init Applications" DisplayName="Init" sap:VirtualizedContainerService.HintSize="254,88" sap2010:WorkflowViewState.IdRef="State_2">
+    <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Read Config, Init Applications" DisplayName="Init" sap:VirtualizedContainerService.HintSize="996,3074" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
-        <TryCatch DisplayName="Catch intialization exceptions" sap:VirtualizedContainerService.HintSize="950,2560" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+        <TryCatch DisplayName="Catch intialization exceptions" sap:VirtualizedContainerService.HintSize="950,2660" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -514,7 +514,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <TryCatch.Try>
-            <Sequence DisplayName="Init State" sap:VirtualizedContainerService.HintSize="912,2121" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Init State" sap:VirtualizedContainerService.HintSize="912,2221" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -527,6 +527,14 @@
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Initialize SystemError" sap:VirtualizedContainerService.HintSize="870,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="ui:BusinessRuleException">[BusinessRuleException]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="ui:BusinessRuleException">[Nothing]</InArgument>
                 </Assign.Value>
               </Assign>
               <If Condition="[Config is Nothing]" DisplayName="If first run - read Config file" sap:VirtualizedContainerService.HintSize="870,1166" sap2010:WorkflowViewState.IdRef="If_1">
@@ -550,7 +558,7 @@
                         <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[Config]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <ui:InvokeCode ContinueOnError="{x:Null}" Code="'SMPT Configuration&#xD;&#xA;CONFIG_SMTPHost = CStr(Config(&quot;SMTP_Host&quot;))&#xD;&#xA;CONFIG_SMTPPort = Int32.Parse(CStr(Config(&quot;SMTP_Portt&quot;)))&#xD;&#xA;CONFIG_SMTPAliasEmail = CStr(Config(&quot;SMTP_AliasEmail&quot;))&#xD;&#xA;CONFIG_SMTPAliasName = CStr(Config(&quot;SMTP_AliasName&quot;))" DisplayName="Set Variable From Config.xls" sap:VirtualizedContainerService.HintSize="683,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                    <ui:InvokeCode ContinueOnError="{x:Null}" Code="'SMPT Configuration&#xA;CONFIG_SMTPHost = CStr(Config(&quot;SMTP_Host&quot;))&#xA;CONFIG_SMTPPort = Int32.Parse(CStr(Config(&quot;SMTP_Portt&quot;)))&#xA;CONFIG_SMTPAliasEmail = CStr(Config(&quot;SMTP_AliasEmail&quot;))&#xA;CONFIG_SMTPAliasName = CStr(Config(&quot;SMTP_AliasName&quot;))" DisplayName="Set Variable From Config.xls" sap:VirtualizedContainerService.HintSize="683,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
                       <ui:InvokeCode.Arguments>
                         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config">[Config]</InArgument>
                         <InOutArgument x:TypeArguments="x:String" x:Key="CONFIG_SMTPHost">[CONFIG_SMTPHost]</InOutArgument>
